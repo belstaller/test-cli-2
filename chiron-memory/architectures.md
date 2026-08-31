@@ -2,6 +2,10 @@
 
 A structural/design choice: layers, module boundaries, where things live.
 
+## La landing page es un sitio estático de un solo archivo HTML más una hoja de estilos, sin…
+
+What: La landing page es un sitio estático de un solo archivo HTML más una hoja de estilos, sin JavaScript, sin bundler y sin backend · Why: — · Where: index.html, styles.css en la raíz del repo <!-- id: 5e707f3d-ddd7-4ef1-b49a-fc7a6380710f-3 -->
+
 ## index.html y styles.css se colocan en la raíz del repo, no en /src o /public
 
 What: index.html y styles.css se colocan en la raíz del repo, no en /src o /public · Why: así cualquier host estático o GitHub Pages puede servir el sitio sin configuración adicional · Where: index.html, styles.css <!-- id: 5e707f3d-ddd7-4ef1-b49a-fc7a6380710f-1 -->
