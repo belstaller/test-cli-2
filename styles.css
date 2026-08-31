@@ -1,0 +1,320 @@
+/* =========================================================================
+   [Nombre del producto] — landing estática
+   CSS propio, sin dependencias ni CDN. Mobile-first: los estilos base son
+   los de teléfono y el único breakpoint (720px) amplía a desktop.
+   Para cambiar la identidad visual, alcanza con las variables de :root.
+   ========================================================================= */
+
+:root {
+  --bg:            #ffffff;
+  --bg-alt:        #f5f7f8;
+  --text:          #16181d;
+  --text-muted:    #5b616e;
+  --accent:        #0f766e;
+  --accent-hover:  #0b5c55;
+  --accent-contrast: #ffffff;
+  --border:        #e2e6ea;
+
+  --radius:  12px;
+  --wrap:    68rem;
+  --gutter:  clamp(1.25rem, 5vw, 3rem);
+  --section: clamp(3rem, 8vw, 5.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:            #101317;
+    --bg-alt:        #171b21;
+    --text:          #eceef1;
+    --text-muted:    #a4abb6;
+    --accent:        #2dd4bf;
+    --accent-hover:  #5eead4;
+    --accent-contrast: #08221f;
+    --border:        #272c34;
+  }
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  /* el header es sticky: compensamos para que las anclas no queden tapadas */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--accent); }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* --- layout ------------------------------------------------------------- */
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--section); }
+.section-alt { background: var(--bg-alt); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: var(--gutter);
+  top: 0.75rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+/* --- header y navegación ------------------------------------------------ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg); /* fallback si color-mix no está soportado */
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-block: 0.75rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-block: 0.25rem;
+}
+
+.nav a:hover { color: var(--accent); }
+
+/* --- hero --------------------------------------------------------------- */
+
+.hero {
+  padding-block: clamp(3.5rem, 12vw, 7rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner { max-width: 46rem; }
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 7vw, 3.6rem);
+}
+
+.lede {
+  max-width: 38rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-ghost {
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* --- producto ----------------------------------------------------------- */
+
+.section h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); }
+
+.section-lede {
+  max-width: 42rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.97rem;
+}
+
+/* --- contacto ----------------------------------------------------------- */
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+}
+
+.contact-item dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-item dd {
+  margin: 0.25rem 0 0;
+  font-size: 1.05rem;
+}
+
+/* --- footer ------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding-block: 2.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-brand {
+  margin: 0;
+  font-weight: 700;
+}
+
+.footer-note,
+.footer-legal {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================================================================
+   Desktop / tablet — único breakpoint
+   ========================================================================= */
+
+@media (min-width: 720px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 1rem;
+  }
+
+  .nav { justify-content: flex-end; gap: 1.75rem; }
+
+  .cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+  .contact-list { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-legal { width: 100%; }
+}

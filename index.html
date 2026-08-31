@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Nombre del producto] — [Tagline corto]</title>
+  <meta name="description" content="[Una frase de 120-150 caracteres que diga qué es y para quién.]">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f766e'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    ==================================================================
+    PLACEHOLDERS
+    Todo el texto a reemplazar está [entre corchetes]. Buscá "[" en
+    este archivo y vas a encontrarlos todos, en orden de aparición:
+
+      [Nombre del producto]  el nombre real (título, marca, footer)
+      [Tagline corto]        3 a 6 palabras, va en la pestaña
+      [Categoría o público]  a quién le hablás
+      [Titular ...]          el headline del hero
+      [Subtítulo ...]        el párrafo de apoyo
+      [Beneficio 1..3]       los tres puntos de valor
+      [hola@ejemplo.com]     datos de contacto
+
+    No hace falta tocar nada más: no hay build, ni dependencias, ni
+    scripts. Abrí index.html en el navegador y ya está.
+    ==================================================================
+  -->
+
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio">[Nombre del producto]</a>
+      <nav aria-label="Secciones del sitio">
+        <ul class="nav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#producto">Producto</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">[Categoría o público, ej. "Para equipos de producto"]</p>
+        <h1>[Titular: el problema que resolvés, en una línea]</h1>
+        <p class="lede">
+          [Subtítulo: dos oraciones que expliquen qué hace y por qué le
+          conviene a quien lo lee. Concreto antes que ambicioso.]
+        </p>
+        <p class="actions">
+          <a class="btn btn-primary" href="#producto">Ver qué hace</a>
+          <a class="btn btn-ghost" href="#contacto">Contacto</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="producto" class="section">
+      <div class="wrap">
+        <h2>Qué es [Nombre del producto]</h2>
+        <p class="section-lede">
+          [Propuesta de valor en dos o tres oraciones: qué es, para quién,
+          y qué cambia para esa persona cuando lo usa.]
+        </p>
+        <ul class="cards">
+          <li class="card">
+            <h3>[Beneficio 1]</h3>
+            <p>[Una o dos oraciones concretas. Un dato o un ejemplo vale más que un adjetivo.]</p>
+          </li>
+          <li class="card">
+            <h3>[Beneficio 2]</h3>
+            <p>[Una o dos oraciones concretas. Un dato o un ejemplo vale más que un adjetivo.]</p>
+          </li>
+          <li class="card">
+            <h3>[Beneficio 3]</h3>
+            <p>[Una o dos oraciones concretas. Un dato o un ejemplo vale más que un adjetivo.]</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto" class="section section-alt">
+      <div class="wrap">
+        <h2>Contacto</h2>
+        <p class="section-lede">
+          Los datos están acá abajo como texto. No hay formularios ni nada
+          que se envíe desde esta página.
+        </p>
+        <dl class="contact-list">
+          <div class="contact-item">
+            <dt>Email</dt>
+            <dd>[hola@ejemplo.com]</dd>
+          </div>
+          <div class="contact-item">
+            <dt>Ubicación</dt>
+            <dd>[Ciudad, País]</dd>
+          </div>
+          <div class="contact-item">
+            <dt>Horario</dt>
+            <dd>[Lunes a viernes, 9 a 18 h]</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-brand">[Nombre del producto]</p>
+        <p class="footer-note">[Tagline corto]</p>
+      </div>
+      <nav aria-label="Secciones del sitio (pie)">
+        <ul class="nav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#producto">Producto</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; 2026 [Nombre del producto]. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
