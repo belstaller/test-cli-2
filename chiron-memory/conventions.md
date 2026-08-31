@@ -2,17 +2,6 @@
 
 A rule, pattern or convention this project follows (naming, formats, repeated approach).
 
-## El copy pendiente se marca [entre corchetes]
+## El copy pendiente de definir (nombre del producto, propuesta de valor, etc.) se marca ent…
 
-**What** — En el HTML del sitio, todo texto que es placeholder y espera copy
-real va [entre corchetes], y arriba del `<body>` hay un comentario que los
-lista en orden de aparición.
-
-**Why** — Hace que reemplazar contenido sea un find-and-replace de `[` en vez de
-una lectura completa del archivo, y hace obvio en un diff o en la página
-renderizada qué quedó sin escribir. Un placeholder que parece copy real (texto
-lorem ipsum, o nombres plausibles inventados) se publica sin que nadie lo note.
-
-**Where** — `index.html`.
-
-**Learned** — 2026-08-31, al entregar la landing sin tener definido el producto.
+What: El copy pendiente de definir (nombre del producto, propuesta de valor, etc.) se marca entre corchetes como placeholder explícito (ej. [Nombre del producto]) en vez de inventar contenido definitivo · Why: el repo no tenía ninguna descripción del producto real, así que se optó por dejar el hueco visible en un solo lugar para completar después, en vez de rellenar con copy inventado · Where: index.html, chiron-memory/conventions.md <!-- id: 5e707f3d-ddd7-4ef1-b49a-fc7a6380710f-2 -->
