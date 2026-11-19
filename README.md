@@ -26,9 +26,7 @@ en orden. Los principales:
 
 | Placeholder | Qué va |
 | --- | --- |
-| `[Nombre del producto]` | El nombre real (título, marca del header, footer) |
-| `[Tagline corto]` | 3 a 6 palabras, aparece en la pestaña del navegador |
-| `[Titular ...]` | El headline del hero |
+| `test-cli-2` / "Página de prueba" | Nombre y mensaje de prueba provisorios (título, header, hero, footer): reemplazar por el nombre y copy reales |
 | `[Beneficio 1..3]` | Los tres puntos de valor |
 | `[hola@ejemplo.com]` | Datos de contacto |
 
